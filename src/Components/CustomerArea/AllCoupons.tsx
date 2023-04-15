@@ -64,7 +64,7 @@ function AllCoupons(): JSX.Element {
 
         <div>
             
-            <select >
+            <select>
                 <option value="">Select</option>
                 <option value={Category.FOOD}>FOOD</option>
                 <option value={Category.ELECTRICITY}>ELECTRICITY</option>
