@@ -1,0 +1,95 @@
+
+*{margin: 0;padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  outline: none;border: none;
+  text-decoration: none;
+  /* text-transform: capitalize; */
+  /* transition: 2s linear; */
+
+}
+html,body,#root{
+  height :100%;
+  /* background: #ead3b3; */
+  background:#e0dffd;
+  text-align: center;
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  scroll-padding-top: 6rem;
+  overflow-x: hidden;
+  
+}
+a{
+  color: #361005;
+}
+
+.Box{
+  font-size: 1.5rem;
+  padding: 2.5rem;
+  border-radius: 5rem;
+  box-shadow: 5px 5px 10px;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  width: 400px;
+  display: inline-flex;
+  text-align: left;
+  justify-content: space-between;
+}
+.navbar-link-company,
+.navbar-link-customer{
+  font-size: 2.5rem;
+}
+.Form 
+{
+  width: 300px;
+  padding: 40px;
+  position: absolute;
+  /* top:50%; */
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background:#FD974F ;
+  text-align: center;
+  border-radius: 20px;
+}
+.Form h2{
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #361005;
+  font-size: 3.5rem;
+  padding-bottom: 1.5rem;
+
+}
+.Form input{
+  background-color: rgb(232, 240, 254);
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #75706d ;
+  padding: 14px 10px;
+  width: 200px;
+  outline: none;
+  border-radius: 24px;
+  color: #361005;
+}
+.Form label{
+  font-size: 1.5rem;
+}
+.Form button
+{
+  border: 0;
+  display: block;
+  margin: 20px auto;
+  text-align: center;
+  border: 2px solid #75706d ;
+  padding: 14px 40px;
+  outline: none;
+  border-radius: 24px;
+}
+
+
+ 
+ 
+
+
+
