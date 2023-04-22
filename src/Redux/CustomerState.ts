@@ -37,7 +37,7 @@ export function updateCustomerAction(product: CustomerUserModel): CustomerAction
 export function deleteCustomerAction(id: number): CustomerAction {
     return { type: CustomerActionType.DeleteCustomer, payload: id };
 }
-export function detailsAction(Customers: CustomerUserModel): CustomerAction{
+export function detailsCustomerAction(Customers: CustomerUserModel): CustomerAction{
     return { type: CustomerActionType.DetailsAction, payload: Customers };
 }
 

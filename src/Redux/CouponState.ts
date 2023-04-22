@@ -4,34 +4,41 @@ import CouponModel from "../Models/CouponModel";
 // 1. Customers state - the data we need at global application level
 export class CouponState {
     public coupon: CouponModel[] = [];
+    public couponCustomer: CouponModel[] = [];
+
 }
 
 // 2. Action Types - list of actions - enum
 export enum CouponActionType {
     FetchCoupon,
+    FetchCustomerCoupon,
     AddCoupon,
     UpdateCoupon,
     DeleteCoupon, 
-    PurchaseCoupon
+    PurchaseCoupon,
+    DeleteAll
 }
 
 // 3. Action - an interface describing a single command
 export interface CouponAction {
     type: CouponActionType; // action type
-    payload: any; // action data
+    payload?: any; // action data
 }
 
 // 4. action creators - functions to create action objects
 export function fetchCouponAction(coupons: CouponModel[]): CouponAction {
     return { type: CouponActionType.FetchCoupon, payload: coupons };
 }
+export function fetchCustomerCouponAction(coupons: CouponModel[]): CouponAction {
+    return { type: CouponActionType.FetchCustomerCoupon, payload: coupons };
+}
 
 export function addCouponAction(coupons: CouponModel): CouponAction {
     return { type: CouponActionType.AddCoupon, payload: coupons };
 }
 
-export function updateCouponAction(coupons: CouponModel): CouponAction {
-    return { type: CouponActionType.UpdateCoupon, payload: coupons };
+export function updateCouponAction(couponCustomer: CouponModel): CouponAction {
+    return { type: CouponActionType.UpdateCoupon, payload: couponCustomer };
 }
 
 export function deleteCouponAction(id: number): CouponAction {
@@ -40,6 +47,9 @@ export function deleteCouponAction(id: number): CouponAction {
 
 export function purchaseCouponAction (id: number): CouponAction{
     return{ type: CouponActionType.PurchaseCoupon, payload:id}
+}
+export function deleteAll (): CouponAction{
+    return{ type: CouponActionType.DeleteAll }
 }
 
 
@@ -50,6 +60,9 @@ export function productReducer(currentState: CouponState = new CouponState(), ac
     switch (action.type) {
         case CouponActionType.FetchCoupon: // here payload is all Coupon
             newState.coupon = action.payload;
+            break;
+        case CouponActionType.FetchCustomerCoupon: // here payload is all Coupon
+            newState.couponCustomer = action.payload;
             break;
         case CouponActionType.AddCoupon: // here payload is a single product to add
             newState.coupon.push(action.payload);
@@ -65,6 +78,10 @@ export function productReducer(currentState: CouponState = new CouponState(), ac
         case CouponActionType.PurchaseCoupon: // here payload is a single product to add
             // newState.coupon = action.payload;
             newState.coupon.push(action.payload);
+            break;
+        case CouponActionType.DeleteAll:
+            newState.coupon = [];
+            newState.couponCustomer = [];
             break;
     }
 

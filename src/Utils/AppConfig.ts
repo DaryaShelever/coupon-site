@@ -34,7 +34,7 @@ class AppConfig{
     public customerGetDetailsUrl= "http://localhost:8080/api/Customer/Details";
     public customerGetCouponsUrl= "http://localhost:8080/api/Customer/Coupons";
     public customerGetCouponsUpToMaxPriceUrl="http://localhost:8080/api/Customer/Coupons/UpToMaxPrice?maxPrice="//12
-    public customerGetACouponsByCategoryUrl="http://localhost:8080/api/Customer/Coupons/ByCategory?category=";//FOOD
+    public customerGetCouponsByCategoryUrl="http://localhost:8080/api/Customer/Coupons/ByCategory?category=";//FOOD
     public customerPurchaseCouponUrl = "http://localhost:8080/api/Customer/Coupon/Purchase?couponId=";//1
     public getAllCouponsUrl="http://localhost:8080/api/Customer/AllCoupons";
     public customerGetAllCouponsUpToMaxPriceUrl="http://localhost:8080/api/Customer/AllCoupons/UpToMaxPrice?maxPrice="//12

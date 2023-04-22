@@ -1,9 +1,9 @@
 import { NavLink, useParams } from "react-router-dom";
 import{FaEdit, FaTrashAlt} from 'react-icons/fa'
-import notificationService from "../../../../Services/NotificationService";
-import adminService from "../../../../Services/AdminService";
+import notificationService from "../../../Services/NotificationService";
+import adminService from "../../../Services/AdminService";
 import { useEffect, useState } from "react";
-import CustomerUserModel from "../../../../Models/CustomerUserModel";
+import CustomerUserModel from "../../../Models/CustomerUserModel";
 
 interface CustomerCardProps {
     customer: CustomerUserModel;
@@ -40,7 +40,7 @@ useEffect(() => {
     return (
         <div className="CustomersCard Box">
             <div className="CustomersCardBox ">
-                {props.customer.id} <br />
+                {/* {props.customer.id} <br /> */}
                 First Name: {props.customer.firstName} <br />
                 Last Name: {props.customer.lastName} <br />
                 Email: {props.customer.email} <br />

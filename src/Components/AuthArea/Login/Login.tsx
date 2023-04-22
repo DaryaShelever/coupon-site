@@ -37,7 +37,7 @@ function Login(): JSX.Element {
                 <label >Password: </label>
                 <input type="password"  required {...register("password")} />
 
-                <select defaultValue=""  required {...register("clientType")}> 
+                <select className="selectInLogin" defaultValue=""  required {...register("clientType")}> 
                     <option disabled value="">Select Client Type</option>
                     <option value={ClientType.CUSTOMER}>Customer </option>
                     <option value={ClientType.COMPANY}>Company </option>

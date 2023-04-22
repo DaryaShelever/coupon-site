@@ -22,12 +22,12 @@ function Menu(): JSX.Element {
             <NavLink to={"/home"}>Home</NavLink>
 
             {clientType === ClientType.CUSTOMER && <>
-                <NavLink to={"/customer/coupons"}>Coupons</NavLink>
+                <NavLink to={"/customer/coupons"}>All Coupons</NavLink>
                
-                <div className="navbar-link">
-                <NavLink to="/customer/purchase" > <FaShoppingBag/> </NavLink>
-                </div>
-               
+                
+                <NavLink to="/customer/purchase" > My Coupons </NavLink>
+                
+                {/* <FaShoppingBag/>  */}
                 <NavLink to={"/customer/details" }>Details</NavLink>
             </>}
 

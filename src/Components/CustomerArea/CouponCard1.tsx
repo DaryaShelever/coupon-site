@@ -14,23 +14,23 @@ interface CouponCardProps {
 function CouponCard(props: CouponCardProps ): JSX.Element {
    
 
-    const params = useParams();
-    const couponId = +params.prodId;
+    // const params = useParams();
+    // const couponId = +params.prodId;
 
-    const [coupon, setCoupon] = useState<CouponModel>();
+    // const [coupon, setCoupon] = useState<CouponModel>();
     // const navigate = useNavigate();
 
-    async function purchaseCoupon()  {
-        try {
-            // console.log(props.coupon.id);
+    // async function purchaseCoupon()  {
+    //     try {
+    //         // console.log(props.coupon.id);
             
-            await customerService.purchaseCoupon(props.coupon.id);
-            notificationService.success("Company deleted");
-            //add popup
-        }catch (error: any) {
-            notificationService.error(error);
-        }
-    }
+    //         await customerService.purchaseCoupon(props.coupon.id);
+    //         notificationService.success("Company deleted");
+    //         //add popup
+    //     }catch (error: any) {
+    //         notificationService.error(error);
+    //     }
+    // }
 
 
 // useEffect(() => {
@@ -43,14 +43,14 @@ function CouponCard(props: CouponCardProps ): JSX.Element {
     return (
         <div className="CouponCard Box">
             <div className="CouponCardBox ">
-                Image:{props.coupon.image} <br />
-                Title:{props.coupon.title} <br />
-                {/* Name:{props.coupon.startDate.} <br /> */}
-                {/* Name:{props.coupon.endDate} <br /> */}
-                Description:{props.coupon.description} <br />
-                Amount:{props.coupon.amount} <br />
-                Category:{props.coupon.category} <br />
-                Price:{props.coupon.price} <br />
+                Image : {props.coupon.image} <br />
+                Title : {props.coupon.title} <br />
+                Start Date : {props.coupon.startDate} <br />
+                End Date : {props.coupon.endDate} <br />
+                Description : {props.coupon.description} <br />
+                Amount : {props.coupon.amount} <br />
+                Category : {props.coupon.category} <br />
+                Price : {props.coupon.price} <br />
             </div>
         </div>
     );

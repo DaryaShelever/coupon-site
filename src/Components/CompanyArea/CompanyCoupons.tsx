@@ -12,6 +12,7 @@ function CompanyCoupons(): JSX.Element {
 
     const { coupon } = couponStore.getState();
     const [allCoupons, setCoupon] = useState<CouponModel[]>(coupon[0] ? coupon : null);
+    const [selectedValue, setSelectedValue] = useState<string>('');
 
     useEffect(() => {
         !allCoupons && (async () => {
@@ -26,22 +27,34 @@ function CompanyCoupons(): JSX.Element {
 
     const handleSelect = (e: any) => {
         console.log(e.target.value)
+        setSelectedValue(e.target.value);
     }
 
     return (
-        <div className="Coupon">
-            <select onChange={handleSelect} >
+        <div className="coupon">
+            
+            <div className="up">
+            <div>
+                <label >Select by category: </label> 
+                <select  className="selectCategory" onChange={handleSelect} >
                 <option value="">Select</option>
                 <option value={Category.FOOD}>FOOD</option>
                 <option value={Category.ELECTRICITY}>ELECTRICITY</option>
                 <option value={Category.RESTAURANT}>RESTAURANT</option>
                 <option value={Category.VACATION}>VACATION</option>
-            </select>
-            <button>Select</button>
-
+                </select>
+                <NavLink to={`/company/coupons/category/${selectedValue}`}> <button>Select</button> </NavLink>
+            </div>
+            <div>
+            <label > Select by Price : </label>
+            <input  className="selectCategory" type="number"  onChange={handleSelect}  />
+             <NavLink to={`/company/coupons/price/${selectedValue}`}> <button>Select</button> </NavLink>
+            </div>
              <div className="navbar-link">
+             <label > New </label> 
              <NavLink to="new"> <FaPlus/> </NavLink>
              </div>
+            </div>
              
             {allCoupons ? allCoupons.map((c) => (
                 <CouponCard key={c.id} coupon={c} />

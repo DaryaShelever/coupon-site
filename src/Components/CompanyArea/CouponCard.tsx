@@ -13,7 +13,6 @@ function CouponCard(props: CouponCardProps ): JSX.Element {
 
     const params = useParams();
     const couponId = +params.prodId;
-    const dateS= props.coupon.startDate;
     const [coupon, setCoupon] = useState<CouponModel>();
     // const navigate = useNavigate();
 
@@ -39,15 +38,15 @@ useEffect(() => {
 return (
     <div className="CouponCard Box">
         <div className="CouponCardBox ">
-            Id: {props.coupon.id} <br />
-            Title:{props.coupon.title} <br />
-            {/* Name:{props.coupon.startDate} <br /> */}
-            {/* Name:{props.coupon.endDate} <br /> */}
-            Amount:{props.coupon.amount} <br />
-            Description:{props.coupon.description} <br />
-            Category:{props.coupon.category} <br />
-            Price:{props.coupon.price} <br />
-            Image:{props.coupon.image} <br />
+            {/* Id: {props.coupon.id} <br /> */}
+            Title : {props.coupon.title} <br />
+            Start Date : {props.coupon.startDate} <br />
+            End Date : {props.coupon.endDate} <br />
+            Amount : {props.coupon.amount} <br />
+            Description : {props.coupon.description} <br />
+            Category : {props.coupon.category} <br />
+            Price : {props.coupon.price} <br />
+            Image : {props.coupon.image} <br />
             </div>
             <div className="navbar-link-coupon">
             <NavLink to={ "/company/coupons/edit/"+ props.coupon.id}><FaEdit/></NavLink>
@@ -56,5 +55,4 @@ return (
         </div>
     );
 }
-
 export default CouponCard;

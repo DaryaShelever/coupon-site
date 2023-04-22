@@ -10,8 +10,6 @@ function AddCoupons(): JSX.Element {
     const { register, handleSubmit, formState } = useForm<CouponModel>();
     const navigate = useNavigate();
 
-
-
     async function send(coupon: CouponModel) {
         try {
             await companyService.addCoupon(coupon);
@@ -24,8 +22,9 @@ function AddCoupons(): JSX.Element {
             notificationService.error(error);
         }
     }
+
     return (  
-        <div className="AddCoupon ">
+        <div className=" Box BigForm">
                 <h2>Add Coupon</h2>
             <form>
                     <label htmlFor="title">Title: </label>
@@ -49,8 +48,8 @@ function AddCoupons(): JSX.Element {
                     {/*  */}
                     <span>{formState.errors.image?.message}</span> 
 
-                    
-                    <select defaultValue=""  required {...register("category")}> 
+                    <label htmlFor="">Select Category</label>
+                    <select className="selectCategory" defaultValue=""  required {...register("category")}> 
                         <option disabled value="">Select Category </option>
                         <option value={Category.FOOD}>FOOD </option>
                         <option value={Category.ELECTRICITY}>ELECTRICITY </option>
@@ -66,8 +65,6 @@ function AddCoupons(): JSX.Element {
                     <label htmlFor="endDate">End Date: </label>
                     < input type="date" {...register("endDate")} />
                     <span>{formState.errors.endDate?.message}</span> 
-
-
 
                 <button onClick={handleSubmit(send)}>Add</button>
             </form>

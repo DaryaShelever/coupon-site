@@ -48,9 +48,9 @@ function EditCompany(): JSX.Element {
                 <h2>Edit Company</h2>
             <form>
                 {/* you can not change name */}
-                <label htmlFor="name">Name: </label>
-                <input type="text"  {...register("name"
-                )} />
+                <label htmlFor="name">Name: </label> <br /><br />
+                <span>You can not change name</span>
+                <input type="text"  {...register("name" )}readOnly />
 
                 <span>{formState.errors.name?.message}</span>
 

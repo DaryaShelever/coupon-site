@@ -9,7 +9,7 @@
   font-size: 1.5rem;
 
 }
-.Login input[type="email"], .Login input[type="password"],select
+.Login input[type="email"], .Login input[type="password"], .selectInLogin
 {
   background-color: rgb(232, 240, 254);
   display: block;
@@ -28,7 +28,7 @@
   width: 300px;
   padding: 40px;
   position: absolute;
-  /* top:50%; */
+  top:50%;
   left: 50%;
   transform: translate(-50%,-50%);
   background:#FD974F ;

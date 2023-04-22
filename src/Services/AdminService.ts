@@ -76,6 +76,7 @@ class AdminService{
         }catch (error: any) {
             console.log(error.response.status);
             if (error.response.status === 401) authService.logout();
+            //404- page not faund
         }
     }
 

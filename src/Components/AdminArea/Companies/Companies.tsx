@@ -6,7 +6,6 @@ import { companiesStore, fetchCompanyAction } from "../../../Redux/CompanyState"
 import adminService from "../../../Services/AdminService";
 import notificationService from "../../../Services/NotificationService";
 import CompanyCard from "./CompanyCard";
-import "./Companies.css";
 
 function Companies(): JSX.Element {
 
@@ -25,9 +24,9 @@ function Companies(): JSX.Element {
     }, []);
 
     return (
-        <div className="Companies">
+        <div className="companies">
              <div className="navbar-link">
-             <NavLink to="new "> <FaPlus/> </NavLink>
+             <NavLink to="new "> Add Company <FaPlus/> </NavLink>
              </div>
              
             {allCompanies ? allCompanies.map((c) => (

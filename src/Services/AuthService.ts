@@ -3,6 +3,7 @@ import axios from "axios";
 import CredentialsModel from "../Models/CredentialsModel";
 import { AuthActionType, authStore } from "../Redux/AuthState";
 import appConfig from "../Utils/AppConfig";
+import { couponStore, deleteAll } from "../Redux/CouponState";
 
 
 class AuthService{
@@ -27,6 +28,8 @@ class AuthService{
 
     public logout(): void {
        authStore.dispatch({type: AuthActionType.Logout});
+       couponStore.dispatch(deleteAll());
+
         
     }
 

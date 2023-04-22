@@ -5,17 +5,20 @@
   justify-content: space-between;
 }
 
-.Layout header {
+ header {
   grid-column: span 6;
+  /* display: block;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #7768c6; */
+
 }
 
 .Layout footer {
   grid-column: span 6;
 }
 
-.Layout, .Layout > * {
-  overflow: auto;
-}
+
 
 .HeaderContainer {
   display: flex;
@@ -25,5 +28,6 @@
 }
 
 .bodyContainer {
-  padding-top: 100px;
+  padding-top: 50px;
+  flex: auto;
 }

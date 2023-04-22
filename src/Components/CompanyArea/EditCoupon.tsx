@@ -17,7 +17,7 @@ function EditCompany(): JSX.Element {
 
     useEffect(() => {
         companyService.getOneCoupon(id)
-        
+       
         .then((p) => {
             setValue("title", p.title);
             setValue("description", p.description);
@@ -50,7 +50,7 @@ function EditCompany(): JSX.Element {
         }
     }
     return (
-        <div className="EditCompany Form">
+        <div className="Box BigForm">
                 <h2>Edit Company</h2>
             <form>
             <label htmlFor="title">Title: </label>
@@ -74,8 +74,8 @@ function EditCompany(): JSX.Element {
                     {/*  */}
                     <span>{formState.errors.image?.message}</span> 
 
-                    
-                    <select defaultValue=""  required {...register("category")}> 
+                    <label htmlFor="">Select Category</label>
+                    <select className="selectCategory" defaultValue=""  required {...register("category")}> 
                         <option disabled value="">Select Category </option>
                         <option value={Category.FOOD}>FOOD </option>
                         <option value={Category.ELECTRICITY}>ELECTRICITY </option>

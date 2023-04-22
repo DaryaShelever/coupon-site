@@ -14,9 +14,15 @@ import CompanyCoupons from "../CompanyArea/CompanyCoupons";
 import AddCoupons from "../CompanyArea/AddCoupons";
 import EditCoupon from "../CompanyArea/EditCoupon";
 import AboutCompany from "../AboutArea/AboutCompany/AboutCompany";
-import CustomerCoupons from "../CustomerArea/AllCoupons";
 import AboutCustomer from "../AboutArea/AboutCustomer/AboutCustomer";
 import PurchaseCoupons from "../CustomerArea/PurchaseCoupons";
+import FilteredCoupons from "../CompanyArea/FilteredCoupons";
+import FilteredCustomerCoupons from "../CustomerArea/FilteredCustomerCoupons";
+import FilteredCouponsByPrice from "../CompanyArea/FilteredCouponsByPrice";
+import FilteredCustomerCouponsByPrice from "../CustomerArea/FilteredCustomerCouponsByPrice";
+import FilteredCustomerMyCoupons from "../CustomerArea/FilteredCustomerMyCoupons";
+import FilteredCustomerMyCouponsByPrice from "../CustomerArea/FilteredCustomerMyCouponsByPrice";
+import AllCoupons from "../CustomerArea/AllCoupons";
 
 
 function Routing(): JSX.Element {
@@ -45,6 +51,7 @@ function Routing(): JSX.Element {
                 {/* New */}
                 <Route path="/admin/customers/new" element={<AddCustomer/>} />
 
+
                 {/* Company Area */}
                 <Route path= "/company/coupons" element={<CompanyCoupons/>} />
                  {/* New */}
@@ -53,12 +60,28 @@ function Routing(): JSX.Element {
                 <Route path="/company/coupons/edit/:prodId" element={<EditCoupon/>} />
                 {/* About */}
                 <Route path="/company/details" element={<AboutCompany/>} />
+                 {/* ByCategory */}
+                 <Route path="/company/coupons/category/:category" element={<FilteredCoupons  selectedValue=":category"/>}/>
+                 {/* ByCategory */}
+                 <Route path="/company/coupons/price/:price" element={<FilteredCouponsByPrice  selectedValue=":price"/>}/>
 
                 {/* Customer Area */}
-                <Route path= "/customer/coupons" element={<CustomerCoupons/>} />
-                {/* Purchase */}
+                <Route path= "/customer/coupons" element={<AllCoupons/>} />
+                {/* Purchase my coupons */}
                 <Route path="/customer/purchase" element={<PurchaseCoupons/>} />
-                {/* my coupons */}
+               
+                {/* All coupons */}
+                {/* ByCategory */}
+                <Route path="/customer/coupons/category/:category" element={<FilteredCustomerCoupons  selectedValue=":category"/>}/>
+                {/* ByPrice */}
+                <Route path="/customer/coupons/price/:price" element={<FilteredCustomerCouponsByPrice  selectedValue=":price"/>}/>
+                
+                {/* My coupons */}
+                {/* ByCategory */}
+                <Route path="/customer/purchase/category/:category" element={<FilteredCustomerMyCoupons  selectedValue=":category"/>}/>
+                {/* ByPrice */}
+                <Route path="/customer/purchase/price/:price" element={<FilteredCustomerMyCouponsByPrice  selectedValue=":price"/>}/>
+                
                 {/* About */}
                 <Route path="/customer/details" element={<AboutCustomer/>} />
 

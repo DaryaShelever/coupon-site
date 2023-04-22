@@ -12,10 +12,10 @@ interface CompanyCardProps {
 function CompanyCard(props: CompanyCardProps ): JSX.Element {
    
 
-    const params = useParams();
-    const companyId = +params.prodId;
+    // const params = useParams();
+    // const companyId = +params.prodId;
 
-    const [company, setCompany] = useState<CompanyUserModel>();
+    // const [company, setCompany] = useState<CompanyUserModel>();
     // const navigate = useNavigate();
 
     async function deleteCompany()  {
@@ -29,17 +29,17 @@ function CompanyCard(props: CompanyCardProps ): JSX.Element {
     }
 }
 
-useEffect(() => {
-    adminService
-        .getOneCompany(companyId)
-        .then((p) => setCompany(p))
-        .catch((e) => notificationService.error(e));
-}, []);
+// useEffect(() => {
+//     adminService
+//         .getOneCompany(companyId)
+//         .then((p) => setCompany(p))
+//         .catch((e) => notificationService.error(e));
+// }, []);
 
     return (
         <div className="CompanyCard Box">
             <div className="CompanyCardBox ">
-                Id: {props.company.id} <br />
+                {/* Id: {props.company.id} <br /> */}
                 Name:{props.company.name} <br />
                 Email: {props.company.email} <br />
                 Password: {props.company.password} <br />

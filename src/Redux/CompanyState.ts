@@ -11,7 +11,8 @@ export enum CompanyActionType {
     FetchCompanies,
     AddCompany,
     UpdateCompany,
-    DeleteCompany
+    DeleteCompany,
+    DetailsAction
 }
 
 // 3. Action - an interface describing a single command
@@ -36,6 +37,10 @@ export function updateCompanyAction(product: CompanyUserModel): CompaniesAction 
 export function deleteCompanyAction(id: number): CompaniesAction {
     return { type: CompanyActionType.DeleteCompany, payload: id };
 }
+export function detailsCompanyAction(Company: CompanyUserModel): CompaniesAction{
+    return { type: CompanyActionType.DetailsAction, payload: Company };
+}
+
 
 
 
@@ -59,6 +64,9 @@ export function productReducer(currentState: CompaniesState = new CompaniesState
         case CompanyActionType.DeleteCompany: // here payload is an id of product to delete
             const indexToDelete = newState.companies.findIndex(p => p.id === action.payload);
             if (indexToDelete >= 0) newState.companies.splice(indexToDelete, 1);
+            break;
+        case CompanyActionType.DetailsAction: 
+            newState.companies = action.payload;
             break;
     }
 

@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import CustomerUserModel from "../../../Models/CustomerUserModel";
 import adminService from "../../../Services/AdminService";
 import notificationService from "../../../Services/NotificationService";
-import CustomerCard from "./CustomerCard/CustomerCard";
+import CustomerCard from "./CustomerCard";
 
 function Customers(): JSX.Element {
 
@@ -25,9 +25,9 @@ function Customers(): JSX.Element {
     }, []);
 
     return (
-        <div className="Customers">
+        <div className="customers">
                 <div className="navbar-link">
-                    <NavLink to="new"> <FaPlus/> </NavLink>
+                    <NavLink to="new"> Add customer <FaPlus/> </NavLink>
                 </div>
              {allCustomers ? allCustomers.map((c) => (
                 <CustomerCard key={c.id} customer={c} />
