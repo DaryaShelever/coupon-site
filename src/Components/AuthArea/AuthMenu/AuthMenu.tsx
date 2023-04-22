@@ -11,7 +11,6 @@ function AuthMenu(): JSX.Element {
     const[user, setUser]= useState<UserModel>(authStore.getState().user);
 
     useEffect(()=> {
-        console.log('user: ', user);
         const unsubscribe = authStore.subscribe(()=>{
             setUser(authStore.getState().user); // Any other update
         });

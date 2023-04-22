@@ -35,7 +35,7 @@ function EditCompany(): JSX.Element {
     // Send updated company information to the server
     async function send(coupon: CouponModel) {
         coupon.id = id;
-        console.log(coupon);
+        // console.log(coupon);
         
         try {
             await companyService.updateCoupon(coupon);

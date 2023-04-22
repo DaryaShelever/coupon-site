@@ -30,7 +30,7 @@ import { customersStore, updateCustomerAction } from "../../../Redux/CustomerSta
      // Send updated company information to the server
      async function send(customer: CustomerUserModel) {
         customer.id = id;
-        console.log(customer);
+        // console.log(customer);
         
         try {
             await adminService.updateCustomer(customer);

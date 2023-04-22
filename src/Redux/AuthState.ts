@@ -55,7 +55,7 @@ return newState;
 }
 
 function extractUser(token: string): UserModel {
-    console.log(token);
+    // console.log(token);
 let user: UserModel;
 const container: any = jwtDecode(token);
 if (container.ClientType === ClientType.CUSTOMER) {

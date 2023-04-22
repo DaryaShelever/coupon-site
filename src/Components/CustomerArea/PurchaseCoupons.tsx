@@ -26,7 +26,7 @@ function PurchaseCoupons(): JSX.Element {
     }, []);
 
     const handleSelect = (e: any) => {
-        console.log(e.target.value)
+        // console.log(e.target.value)
         setSelectedValue(e.target.value);
     }
     return (
