@@ -3,6 +3,7 @@ import CompanyUserModel from "../../../Models/CompanyUserModel";
 import companyService from "../../../Services/CompanyService";
 import notificationService from "../../../Services/NotificationService";
 
+//all details about company 
 function AboutCompany(): JSX.Element {
    
    const [company,setCompany]= useState <CompanyUserModel>();

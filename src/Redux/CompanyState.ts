@@ -41,10 +41,6 @@ export function detailsCompanyAction(Company: CompanyUserModel): CompaniesAction
     return { type: CompanyActionType.DetailsAction, payload: Company };
 }
 
-
-
-
-
 // 5. reducer - a single function performing any of the above actions
 
 export function productReducer(currentState: CompaniesState = new CompaniesState(), action: CompaniesAction): CompaniesState {

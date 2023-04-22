@@ -7,6 +7,7 @@ import adminService from "../../../Services/AdminService";
 import notificationService from "../../../Services/NotificationService";
 import CompanyCard from "./CompanyCard";
 
+//Here you can get all companies 
 function Companies(): JSX.Element {
 
     const { companies } = companiesStore.getState();
@@ -32,7 +33,7 @@ function Companies(): JSX.Element {
             {allCompanies ? allCompanies.map((c) => (
                 <CompanyCard key={c.id} company={c} />
             ))
-            : null} {/* add loading screen / component  */}
+            : null} 
         </div>
     );
 } 

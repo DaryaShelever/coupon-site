@@ -20,7 +20,6 @@ function AllCoupons(): JSX.Element {
                 }, (error) => {
                     notificationService.error(error);
                 });
-            // }
         })();
     }, []);
 
@@ -55,7 +54,6 @@ function AllCoupons(): JSX.Element {
 
             <CouponCard key={c.id} coupon={c} />
         )): null} 
-             {/* add loading screen / component  */}
         </div>
     );
 

@@ -5,7 +5,5 @@ class AdminUserModel extends UserModel {
     public constructor(clientType: ClientType ,id:number,email:string, password:string){
 		super(clientType,id,email,password);
 	}
-
 }
-
 export default AdminUserModel;

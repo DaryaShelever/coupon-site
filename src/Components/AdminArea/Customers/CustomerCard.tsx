@@ -16,14 +16,12 @@ function CustomerCard(props: CustomerCardProps ): JSX.Element {
     const customerId = +params.prodId;
 
     const [customer, setCustomer] = useState<CustomerUserModel>();
-    // const navigate = useNavigate();
 
     async function deleteCustomer()  {
         if (window.confirm("Are you sure?")) {
         try {
             await adminService.deleteCustomer(props.customer.id);
             notificationService.success("Customer deleted");
-            //add popup
         }catch (error: any) {
             notificationService.error(error);
         }

@@ -32,34 +32,33 @@ function CompanyCoupons(): JSX.Element {
 
     return (
         <div className="coupon">
-            
             <div className="up">
-            <div>
-                <label >Select by category: </label> 
-                <select  className="selectCategory" onChange={handleSelect} >
-                <option value="">Select</option>
-                <option value={Category.FOOD}>FOOD</option>
-                <option value={Category.ELECTRICITY}>ELECTRICITY</option>
-                <option value={Category.RESTAURANT}>RESTAURANT</option>
-                <option value={Category.VACATION}>VACATION</option>
-                </select>
-                <NavLink to={`/company/coupons/category/${selectedValue}`}> <button>Select</button> </NavLink>
-            </div>
-            <div>
-            <label > Select by Price : </label>
-            <input  className="selectCategory" type="number"  onChange={handleSelect}  />
-             <NavLink to={`/company/coupons/price/${selectedValue}`}> <button>Select</button> </NavLink>
-            </div>
-             <div className="navbar-link">
-             <label > New </label> 
-             <NavLink to="new"> <FaPlus/> </NavLink>
-             </div>
+                <div>
+                    <label >Select by category: </label> 
+                    <select  className="selectCategory" onChange={handleSelect} >
+                    <option value="">Select</option>
+                    <option value={Category.FOOD}>FOOD</option>
+                    <option value={Category.ELECTRICITY}>ELECTRICITY</option>
+                    <option value={Category.RESTAURANT}>RESTAURANT</option>
+                    <option value={Category.VACATION}>VACATION</option>
+                    </select>
+                    <NavLink to={`/company/coupons/category/${selectedValue}`}> <button>Select</button> </NavLink>
+                </div>
+                <div>
+                    <label > Select by Price : </label>
+                    <input  className="selectCategory" type="number"  onChange={handleSelect}  />
+                    <NavLink to={`/company/coupons/price/${selectedValue}`}> <button>Select</button> </NavLink>
+                </div>
+                <div className="navbar-link">
+                    <label > New </label> 
+                    <NavLink to="new"> <FaPlus/> </NavLink>
+                </div>
             </div>
              
             {allCoupons ? allCoupons.map((c) => (
                 <CouponCard key={c.id} coupon={c} />
             ))
-            : null} {/* add loading screen / component  */}
+            : null} 
         </div>
     );
 } 

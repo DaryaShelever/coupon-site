@@ -9,12 +9,9 @@ import customerService from '../../Services/CustomerService';
 interface Props {
   selectedValue: string;
 }
-//all coupons by category
+//all coupons by price
 function FilteredCustomerCouponsByPrice(props: Props): JSX.Element  {
   const { price } = useParams<{ price: string }>();
-
-  console.log(price);
-
   const { coupon } = couponStore.getState();
   const [allCoupons, setCoupon] = useState<CouponModel[]>(coupon[0] ? coupon : null);
   
@@ -35,12 +32,9 @@ function FilteredCustomerCouponsByPrice(props: Props): JSX.Element  {
       {allCoupons ? allCoupons.map((c) => (
                 <CouponCard key={c.id} coupon={c} />
             ))
-            : null} {/* add loading screen / component  */}
-
+            : null} 
       <NavLink to="/customer/coupons">  <button> Back to All Coupons </button> </NavLink>
-
     </div>
-
   )
 }
 export default FilteredCustomerCouponsByPrice;

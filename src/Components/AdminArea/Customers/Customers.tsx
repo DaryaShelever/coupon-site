@@ -1,5 +1,4 @@
 import { NavLink } from "react-router-dom";
-import "./Customers.css";
 import { FaPlus } from "react-icons/fa";
 import { customersStore, fetchCustomerAction } from "../../../Redux/CustomerState";
 import { useEffect, useState } from "react";

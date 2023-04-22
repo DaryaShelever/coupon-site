@@ -9,11 +9,9 @@ import CouponCard from './CouponCard';
 interface Props {
   selectedValue: string;
 }
-
+//select by category
 function FilteredCoupons(props: Props): JSX.Element  {
   const { category } = useParams<{ category: string }>();
-
-  // console.log(category);
 
   const { coupon } = couponStore.getState();
   const [allCoupons, setCoupon] = useState<CouponModel[]>(coupon[0] ? coupon : null);
@@ -34,8 +32,8 @@ function FilteredCoupons(props: Props): JSX.Element  {
     <div>
       {allCoupons ? allCoupons.map((c) => (
         <CouponCard key={c.id} coupon={c} />))
-      : null} {/* add loading screen / component  */}
-              <NavLink to="/company/coupons"><button> Back to Coupons </button></NavLink>
+      : null} 
+      <NavLink to="/company/coupons"><button> Back to Coupons </button></NavLink>
 
     </div>
   )

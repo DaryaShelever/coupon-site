@@ -1,8 +1,6 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import{FaPlus} from 'react-icons/fa'
 import CouponModel from "../../Models/CouponModel";
-import { useEffect, useState } from "react";
-import companyService from "../../Services/CompanyService";
 import notificationService from "../../Services/NotificationService";
 import customerService from "../../Services/CustomerService";
 
@@ -11,15 +9,7 @@ interface CouponCardProps {
 }
 
 function CouponCard(props: CouponCardProps ): JSX.Element {
-   
-
-    const params = useParams();
-    const couponId = +params.prodId;
-
-    const [coupon, setCoupon] = useState<CouponModel>();
-    // const navigate = useNavigate();
-
-    //customer added the coupon 
+    
     async function purchaseCoupon()  {
         try {
             await customerService.purchaseCoupon(props.coupon.id);
@@ -28,13 +18,6 @@ function CouponCard(props: CouponCardProps ): JSX.Element {
             notificationService.error(error);
         }
     }
-
-// useEffect(() => {
-    // companyService
-    //     .getOneCoupon(couponId)
-    //     .then((p) => setCoupon(p))
-    //     .catch((e) => notificationService.error(e));
-// }, []);
 
     return (
         <div className="CouponCard Box">
@@ -51,8 +34,6 @@ function CouponCard(props: CouponCardProps ): JSX.Element {
                 <div className="navbar-link">
                  <NavLink to="" onClick={purchaseCoupon}> <FaPlus/> </NavLink>
                 </div>
-            
-            
         </div>
     );
 }

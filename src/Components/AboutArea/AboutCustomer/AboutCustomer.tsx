@@ -3,6 +3,7 @@ import CustomerUserModel from "../../../Models/CustomerUserModel";
 import customerService from "../../../Services/CustomerService";
 import notificationService from "../../../Services/NotificationService";
 
+//all details about company
 function AboutCustomer(): JSX.Element {
     const [customer, setCustomer] = useState<CustomerUserModel>();
 

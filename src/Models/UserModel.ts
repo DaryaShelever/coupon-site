@@ -13,7 +13,6 @@ class UserModel {
         this.password=password;
     
     }
-
 }
 
 export default UserModel;

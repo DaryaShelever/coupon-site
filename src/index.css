@@ -3,13 +3,9 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   outline: none;border: none;
   text-decoration: none;
-  /* text-transform: capitalize; */
-  /* transition: 2s linear; */
-
 }
 html,body,#root{
   height :100%;
-  /* background: #ead3b3; */
   background:#e0dffd;
   text-align: center;
   font-size: 65%;
@@ -52,9 +48,6 @@ a{
   padding: 40px;
   display: inline-flex;
   flex-direction: column;
-  /* top:50%; */
-  /* left: 50%; */
-  /* transform: translate(-50%,-50%); */
   background:#FD974F ;
   text-align: center;
   border-radius: 35px;
@@ -93,10 +86,7 @@ a{
   width: 500px;
   flex-direction: column;
   background-color: #FD974F;
-  /* padding: 30px;*/
   border-radius: 50px; 
-
-
 }
 .BigForm  h2{
   text-transform: uppercase;
@@ -104,7 +94,6 @@ a{
   color: #361005;
   font-size: 3.5rem;
   padding-bottom: 1.5rem;
-
 }
  .BigForm input , .selectCategory{
   background-color: rgb(232, 240, 254);
@@ -123,7 +112,6 @@ a{
 .BigForm span {
   font-size: 1rem;
   color: #7768c6;
-
 }
 .BigForm button{
   width: 220px;
@@ -162,7 +150,6 @@ a{
   padding: 2.5rem;
   justify-content: space-around;
   align-items: center;
-  
 }
  .coupon button{
   margin: 10px auto;
@@ -180,18 +167,14 @@ a{
   font-size: 2rem;
   text-transform: uppercase;
   color: #361005;
-
-
  }
  .navbar-link {
    font-size: 2.5rem;
    margin: 10px;
-
  }
  .AuthMenu {
   display: flex;
   justify-content: flex-end;
-
 }
 .notyf__toast {
   margin: 20px ;
@@ -201,7 +184,6 @@ a{
   border-radius: 24px;
   text-align: center;
   display: flex;
-
   align-items: center;
   justify-content: center;
 }

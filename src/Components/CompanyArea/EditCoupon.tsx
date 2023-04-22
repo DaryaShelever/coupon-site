@@ -43,7 +43,6 @@ function EditCompany(): JSX.Element {
             // navigate back to products
             couponStore.dispatch(updateCouponAction(coupon))
             navigate("/company/coupons");
-            
         } catch (error: any) {
             console.dir(error);
             notificationService.error(error);
@@ -58,20 +57,19 @@ function EditCompany(): JSX.Element {
                     <span>{formState.errors.title?.message}</span>
     
                     <label htmlFor="description">Description: </label>
-                    < input type="text" {...register("description")} />
+                    <input type="text" {...register("description")} />
                     <span>{formState.errors.description?.message}</span> 
                    
                     <label htmlFor="amount">Amount: </label>
-                    < input type="number" {...register("amount")} />
+                    <input type="number" {...register("amount")} />
                     <span>{formState.errors.amount?.message}</span> 
 
                     <label htmlFor="price">Price: </label>
-                    < input type="number" {...register("price")} />
+                    <input type="number" {...register("price")} />
                     <span>{formState.errors.price?.message}</span> 
 
                     <label htmlFor="image">Image: </label>
-                    < input type="" {...register("image")} />
-                    {/*  */}
+                    <input type="" {...register("image")} />
                     <span>{formState.errors.image?.message}</span> 
 
                     <label htmlFor="">Select Category</label>

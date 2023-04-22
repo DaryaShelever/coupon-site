@@ -13,7 +13,7 @@ import { fetchCustomerAction } from '../../Redux/CustomerState';
 
 function Layout(): JSX.Element {
     useEffect(() => {
-        console.log(localStorage.getItem("token"));
+        // console.log(localStorage.getItem("token"));
         doSilentLogin(localStorage.getItem("token"));
         (async () => {
             adminService.getAllCompany().then((arr) => {
@@ -30,7 +30,6 @@ function Layout(): JSX.Element {
     const doSilentLogin = async (token: string) => {
         await authService.refresh(token);
     }
-    
     return (
         <div className="Layout">
             <header>

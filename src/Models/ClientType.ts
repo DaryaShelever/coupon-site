@@ -4,5 +4,4 @@ enum ClientType {
     ADMIN="ADMIN"
 	
 }
-
 export default ClientType;

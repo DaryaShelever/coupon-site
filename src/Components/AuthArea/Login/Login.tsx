@@ -13,19 +13,15 @@ function Login(): JSX.Element {
     const{register,handleSubmit}= useForm<CredentialsModel>();
     const navigate = useNavigate();
 
-    
-
     async function send(credentials: CredentialsModel) {
         try {
           await authService.login(credentials);
           notificationService.success("Welcome");
-
-          //pop
           navigate("/home");
         } catch (err:any) {
             console.log(err.message);
-            
-            alert(err.message);//pop
+            notificationService.error(err.message);
+            // alert(err.message);//pop
         }
     }
     return (

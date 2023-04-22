@@ -1,9 +1,9 @@
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink} from "react-router-dom";
 import CompanyUserModel from "../../../Models/CompanyUserModel";
 import{FaEdit, FaTrashAlt} from 'react-icons/fa'
 import notificationService from "../../../Services/NotificationService";
 import adminService from "../../../Services/AdminService";
-import { useEffect, useState } from "react";
+
 
 interface CompanyCardProps {
  company: CompanyUserModel;
@@ -11,13 +11,6 @@ interface CompanyCardProps {
 
 function CompanyCard(props: CompanyCardProps ): JSX.Element {
    
-
-    // const params = useParams();
-    // const companyId = +params.prodId;
-
-    // const [company, setCompany] = useState<CompanyUserModel>();
-    // const navigate = useNavigate();
-
     async function deleteCompany()  {
         if (window.confirm("Are you sure?")) {
         try {
@@ -29,17 +22,9 @@ function CompanyCard(props: CompanyCardProps ): JSX.Element {
     }
 }
 
-// useEffect(() => {
-//     adminService
-//         .getOneCompany(companyId)
-//         .then((p) => setCompany(p))
-//         .catch((e) => notificationService.error(e));
-// }, []);
-
     return (
         <div className="CompanyCard Box">
             <div className="CompanyCardBox ">
-                {/* Id: {props.company.id} <br /> */}
                 Name:{props.company.name} <br />
                 Email: {props.company.email} <br />
                 Password: {props.company.password} <br />

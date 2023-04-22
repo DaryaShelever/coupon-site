@@ -9,27 +9,22 @@ import { addCustomerAction, customersStore, deleteCustomerAction, fetchCustomerA
 class AdminService{
    
     public async addCompany(company: CompanyUserModel): Promise<any> {
-
         const response = await axios.post<CompanyUserModel>(appConfig.adminAddCompanyUrl, company);
         const addedCompany = response.data;
-
         // Redux - update global state about a newly added product
         companiesStore.dispatch(addCompanyAction(addedCompany));
 
     }
     public async updateCompany(company: CompanyUserModel): Promise<void> {
-               
         const response = await axios.put<CompanyUserModel>(appConfig.adminUpdateCompanyUrl, company,{
-            headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json'}
         });
         const updatedCompany = response.data;
-        // Redux
         companiesStore.dispatch(updateCompanyAction(updatedCompany));
     }
         
     public async deleteCompany(companyId: number): Promise<void> {
         await axios.delete(appConfig.adminDeleteCompanyUrl + companyId);
-        // Redux
         companiesStore.dispatch(deleteCompanyAction(companyId));
     }
 
@@ -43,18 +38,15 @@ class AdminService{
             if (companiesStore.getState().companies.length === 0) {
                 const response = await axios.get<CompanyUserModel[]>(appConfig.adminGetAllCompaniesUrl); // waiting
                 const companies = response.data;
-            
                 // Redux - update global state about fetching all companies
                 // productsStore.dispatch({ type: ProductActionType.FetchProducts, payload: products });
                 companiesStore.dispatch(fetchCompanyAction(companies));
-
             return companies;
             }
         }catch (error: any) {
             console.log(error.response.status);
             if (error.response.status === 401) authService.logout();
         }
-
     }
 
     //Customer
@@ -76,30 +68,23 @@ class AdminService{
         }catch (error: any) {
             console.log(error.response.status);
             if (error.response.status === 401) authService.logout();
-            //404- page not faund
         }
     }
-
     public async addCustomer(customer: CustomerUserModel): Promise<any> {
-
         const response = await axios.post<CustomerUserModel>(appConfig.adminAddCustomerUrl, customer);
         const addedCustomer = response.data;
-        // Redux - update global state about a newly added product
         customersStore.dispatch(addCustomerAction(addedCustomer));
     }
     public async updateCustomer(customer: CustomerUserModel): Promise<void> {
-               
         const response = await axios.put<CustomerUserModel>(appConfig.adminUpdateCustomerUrl, customer,{
-            headers: {'Content-Type': 'application/json'}
+        headers: {'Content-Type': 'application/json'}
         });
         const updatedCustomer = response.data;
-        // Redux
         customersStore.dispatch(updateCustomerAction(updatedCustomer));
     }
 
     public async deleteCustomer(customerId: number): Promise<void> {
         await axios.delete(appConfig.adminDeleteCustomerUrl + customerId);
-        // Redux
         customersStore.dispatch(deleteCustomerAction(customerId));
     }
 

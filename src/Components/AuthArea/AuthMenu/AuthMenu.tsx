@@ -3,7 +3,6 @@ import { NavLink } from "react-router-dom";
 import UserModel from "../../../Models/UserModel";
 import { authStore } from "../../../Redux/AuthState";
 import authService from "../../../Services/AuthService";
-import "./AuthMenu.css";
 import{FaSignOutAlt, FaUserAlt,} from 'react-icons/fa'
 import notificationService from "../../../Services/NotificationService";
 
@@ -13,7 +12,6 @@ function AuthMenu(): JSX.Element {
 
     useEffect(()=> {
         console.log('user: ', user);
-        // setUser(authStore.getState().user);
         const unsubscribe = authStore.subscribe(()=>{
             setUser(authStore.getState().user); // Any other update
         });
@@ -34,7 +32,6 @@ function AuthMenu(): JSX.Element {
             }
             {!!user && 
                 <>
-                {/* <span> Hello {user.email}</span> */}
                 <NavLink to= "/home" onClick={logout}className="navbar-link"> <FaSignOutAlt/></NavLink>
                 </>
             }

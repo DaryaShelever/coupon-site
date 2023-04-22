@@ -9,17 +9,12 @@ import CouponCard from './CouponCard';
 interface Props {
   selectedValue: string;
 }
-
 function FilteredCouponsByPrice(props: Props): JSX.Element  {
   const { price } = useParams<{ price: string }>();
-
-  console.log(price);
-
   const { coupon } = couponStore.getState();
   const [allCoupons, setCoupon] = useState<CouponModel[]>(coupon[0] ? coupon : null);
   
   useEffect(() => {
-    
     !allCoupons && (async () => {
         companyService.getAllCouponsByPrice(price)
         .then((arr) => {
@@ -33,16 +28,11 @@ function FilteredCouponsByPrice(props: Props): JSX.Element  {
 
   return (
     <div>
-      
-
             {allCoupons ? allCoupons.map((c) => (
                 <CouponCard key={c.id} coupon={c} />
             ))
-            : null} {/* add loading screen / component  */}
-
-
+            : null} 
     </div>
-
   )
 }
 export default FilteredCouponsByPrice;

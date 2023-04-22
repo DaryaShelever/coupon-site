@@ -51,18 +51,15 @@ function EditCompany(): JSX.Element {
                 <label htmlFor="name">Name: </label> <br /><br />
                 <span>You can not change name</span>
                 <input type="text"  {...register("name" )}readOnly />
-
                 <span>{formState.errors.name?.message}</span>
 
                 <label htmlFor="email">Email: </label>
-               < input type="email" {...register("email"
-                    )} />
-                 <span>{formState.errors.email?.message}</span> 
+                <input type="email" {...register("email")} />
+                <span>{formState.errors.email?.message}</span> 
                
                 <label htmlFor="password">Password: </label>
-               < input type="password" {...register("password"
-                    )} />
-                 <span>{formState.errors.password?.message}</span> 
+                <input type="password" {...register("password")} />
+                <span>{formState.errors.password?.message}</span> 
                
                 <button onClick={handleSubmit(send)}>Edit</button>
             </form>

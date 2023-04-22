@@ -4,17 +4,14 @@ import notificationService from '../../Services/NotificationService';
 import CouponModel from '../../Models/CouponModel';
 import { NavLink, useParams } from 'react-router-dom';
 import customerService from '../../Services/CustomerService';
-import CouponCard1 from './CouponCard1';
+import CouponCard1 from './CustomerCouponCard';
 
 interface Props {
   selectedValue: string;
 }
-//all coupons by category
+//customers coupons by category
 function FilteredCustomerMyCoupons(props: Props): JSX.Element  {
   const { category } = useParams<{ category: string }>();
-
-  // console.log(prodId);
-
   const { coupon } = couponStore.getState();
   const [allCoupons, setCoupon] = useState<CouponModel[]>(coupon[0] ? coupon : null);
   
@@ -35,7 +32,7 @@ function FilteredCustomerMyCoupons(props: Props): JSX.Element  {
       {allCoupons ? allCoupons.map((c) => (
                 <CouponCard1 key={c.id} coupon={c} />
             ))
-            : null} {/* add loading screen / component  */}
+            : null} 
         <NavLink to="/customer/purchase"> <button>Back to My Coupons </button></NavLink>
 
     </div>

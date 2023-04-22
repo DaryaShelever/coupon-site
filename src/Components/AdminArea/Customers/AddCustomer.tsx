@@ -14,10 +14,8 @@ function AddCustomer(): JSX.Element {
         try {
             await adminService.addCustomer(customer);
             notificationService.success("Product Added");
-          
             // navigate back to products
             navigate("/admin/customers");
-
         } catch (error: any) {
             console.dir(error);
             notificationService.error(error);
@@ -37,17 +35,16 @@ function AddCustomer(): JSX.Element {
                     <span>{formState.errors.lastName?.message}</span>
     
                     <label htmlFor="email">Email: </label>
-                   < input type="email" {...register("email")} />
-                     <span>{formState.errors.email?.message}</span> 
+                    <input type="email" {...register("email")} />
+                    <span>{formState.errors.email?.message}</span> 
                    
                     <label htmlFor="password">Password: </label>
-                   < input type="password" {...register("password")} />
-                     <span>{formState.errors.password?.message}</span> 
+                    <input type="password" {...register("password")} />
+                    <span>{formState.errors.password?.message}</span> 
 
                 <button onClick={handleSubmit(send)}>Add</button>
             </form>
             </div>
         )
-  
 }
 export default AddCustomer;

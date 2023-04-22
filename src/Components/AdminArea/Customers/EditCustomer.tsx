@@ -35,10 +35,8 @@ import { customersStore, updateCustomerAction } from "../../../Redux/CustomerSta
         try {
             await adminService.updateCustomer(customer);
             notificationService.success("Company has been updated");
-            // navigate back to products
             customersStore.dispatch(updateCustomerAction(customer))
             navigate("/admin/customers");
-            
         } catch (error: any) {
             console.dir(error);
             notificationService.error(error);
@@ -57,12 +55,12 @@ import { customersStore, updateCustomerAction } from "../../../Redux/CustomerSta
                     <span>{formState.errors.lastName?.message}</span>
     
                     <label htmlFor="email">Email: </label>
-                   < input type="email" {...register("email")} />
-                     <span>{formState.errors.email?.message}</span> 
+                    <input type="email" {...register("email")} />
+                    <span>{formState.errors.email?.message}</span> 
                    
                     <label htmlFor="password">Password: </label>
-                   < input type="password" {...register("password")} />
-                     <span>{formState.errors.password?.message}</span> 
+                    <input type="password" {...register("password")} />
+                    <span>{formState.errors.password?.message}</span> 
 
                 <button onClick={handleSubmit(send)}>Edit</button>
             </form>

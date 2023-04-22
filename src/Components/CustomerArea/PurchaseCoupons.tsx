@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { couponStore, fetchCustomerCouponAction } from "../../Redux/CouponState";
+import { couponStore, fetchPersonalCouponAction } from "../../Redux/CouponState";
 import CouponModel from "../../Models/CouponModel";
 import notificationService from "../../Services/NotificationService";
 import customerService from "../../Services/CustomerService";
-import CouponCard1 from "./CouponCard1";
+import CouponCard1 from "./CustomerCouponCard";
 import Category from "../../Models/Category";
 import { NavLink } from "react-router-dom";
 
@@ -15,10 +15,9 @@ function PurchaseCoupons(): JSX.Element {
     const [selectedValue, setSelectedValue] = useState<string>('');
 
     useEffect(() => {
-        // couponStore.dispatch(deleteAll());
         !customerCoupons && (async () => {
             customerService.getCustomersCoupon().then((arr) => {
-                fetchCustomerCouponAction(arr);
+                fetchPersonalCouponAction(arr);
                 setCoupon(arr);
             }, (error) => {
                 notificationService.error(error);
@@ -56,9 +55,7 @@ function PurchaseCoupons(): JSX.Element {
                   <CouponCard1 key={c.id} coupon={c} />
             ))
              : null} 
-             {/* add loading screen / component   */}
        </div>
     );
-
-            }
+}
 export default PurchaseCoupons;

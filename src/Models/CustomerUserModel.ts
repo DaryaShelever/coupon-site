@@ -11,5 +11,4 @@ class CustomerUserModel extends UserModel {
 		this.lastName=lastName;
 	}
 }
-
 export default CustomerUserModel;

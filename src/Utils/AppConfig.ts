@@ -1,14 +1,7 @@
 class AppConfig{
     public loginUrl = "http://localhost:8080/auth/login";
-    //customer url
-    // public customerPurchaseCouponUrl = "http://localhost:8080/api/customer/purchase/";//1
-    // public customerGetDetailsUrl= "http://localhost:8080/api/customer/detailes/";
-    // public customerFindCouponsUrl= "http://localhost:8080/api/customer/all-customer-coupons/";
-    // public customerFindCouponsByMaxPriceUrl="http://localhost:8080/api/customer/all-customer-coupons/max-price?maxPrice=";//12
-    // public customerFindCouponsByCategoryUrl="http://localhost:8080/api/customer/all-customer-coupons/category?category=";//FOOD
-    // public getAllCouponsUrl="http://localhost:8080/api/customer/all-coupons/";
     
-    // //admin url
+    //admin url
     public adminUpdateCustomerUrl = "http://localhost:8080/api/Admin/Customer/update";
     public adminAddCustomerUrl = "http://localhost:8080/api/Admin/Customer/add";
     public adminGetCustomerUrl = "http://localhost:8080/api/Admin/Customer/getOne/";//1  //GET
@@ -36,13 +29,10 @@ class AppConfig{
     public customerGetCouponsUpToMaxPriceUrl="http://localhost:8080/api/Customer/Coupons/UpToMaxPrice?maxPrice="//12
     public customerGetCouponsByCategoryUrl="http://localhost:8080/api/Customer/Coupons/ByCategory?category=";//FOOD
     public customerPurchaseCouponUrl = "http://localhost:8080/api/Customer/Coupon/Purchase?couponId=";//1
-    public getAllCouponsUrl="http://localhost:8080/api/Customer/AllCoupons";
+    public customerGetAllCouponsUrl="http://localhost:8080/api/Customer/AllCoupons";
     public customerGetAllCouponsUpToMaxPriceUrl="http://localhost:8080/api/Customer/AllCoupons/UpToMaxPrice?maxPrice="//12
     public customerGetAllCouponsByCategoryUrl="http://localhost:8080/api/Customer/AllCoupons/ByCategory?category=";//FOOD
     
-
-
-
     }
     const appConfig = new AppConfig();
     

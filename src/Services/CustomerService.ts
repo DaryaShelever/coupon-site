@@ -1,7 +1,7 @@
 import axios from "axios";
 import CouponModel from "../Models/CouponModel";
 import appConfig from "../Utils/AppConfig";
-import { couponStore, deleteAll, fetchCouponAction, fetchCustomerCouponAction } from "../Redux/CouponState";
+import { couponStore, fetchPersonalCouponAction } from "../Redux/CouponState";
 import authService from "./AuthService";
 import CustomerUserModel from "../Models/CustomerUserModel";
 import { customersStore, detailsCustomerAction } from "../Redux/CustomerState";
@@ -20,14 +20,13 @@ class CompanyService{
 
     public async getAllCoupon(): Promise<CouponModel[]> {
         try {
-            const response = await axios.get<CouponModel[]>(appConfig.getAllCouponsUrl); // waiting//
+            const response = await axios.get<CouponModel[]>(appConfig.customerGetAllCouponsUrl); // waiting//
             const coupon = response.data;
             return coupon;
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401) {
-                authService.logout();
-            } }
+            if (error.response.status === 401) authService.logout();
+             }
     }
     //all coupons
     public async getAllCouponsByCategory(category: string): Promise<CouponModel[]> {
@@ -37,9 +36,8 @@ class CompanyService{
             return coupon;
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401) {
-                authService.logout();
-            }}
+            if (error.response.status === 401) authService.logout();
+            }
     }
     public async getAllCouponsByPrice(price: any): Promise<CouponModel[]> {
         try {
@@ -48,9 +46,8 @@ class CompanyService{
             return coupon;
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401) {
-                authService.logout();
-            }
+            if (error.response.status === 401) authService.logout();
+            
         }
     }
 
@@ -58,51 +55,40 @@ class CompanyService{
     public async getCustomersCoupon(): Promise<CouponModel[]> {
         try {
             // if there are no products in Redux global state go to server:
-            if (couponStore.getState().couponCustomer.length === 0) {
-                //if no coupons
+            if (couponStore.getState().couponPersonal.length === 0) {
                 const response = await axios.get<CouponModel[]>(appConfig.customerGetCouponsUrl); // waiting//
                 const data = response.data;
-            
-                // Redux - update global state about fetching all companies
-                // productsStore.dispatch({ type: ProductActionType.FetchProducts, payload: products });
                 //save coupon in the state
-                couponStore.dispatch(fetchCustomerCouponAction(data));
+                couponStore.dispatch(fetchPersonalCouponAction(data));
             }
             //go to state and takes coupons 
-            const coupon = couponStore.getState().couponCustomer;
+            const coupon = couponStore.getState().couponPersonal;
             return coupon;
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401){
-                authService.logout();
-                // couponStore.dispatch(deleteAll());
-            } 
-                
+            if (error.response.status === 401) authService.logout();
         }
     }
 
     public async getCustomerCouponsByCategory(category: string): Promise<CouponModel[]> {
         try {
             const response = await axios.get<CouponModel[]>(appConfig.customerGetCouponsByCategoryUrl+category); // waiting//
-                const coupon = response.data;
+            const coupon = response.data;
         return coupon;
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401) {
-                authService.logout();
-            }
+            if (error.response.status === 401) authService.logout();   
         }
     }
     public async getCustomerCouponsByPrice(price: any): Promise<CouponModel[]> {
         try {
             const response = await axios.get<CouponModel[]>(appConfig.customerGetCouponsUpToMaxPriceUrl+price); // waiting//
-                const coupon = response.data;
+            const coupon = response.data;
             return coupon;
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401) {
-                authService.logout();
-            }
+            if (error.response.status === 401) authService.logout();
+            
         }
     }
 
@@ -116,10 +102,7 @@ class CompanyService{
             
         }catch (error: any) {
             console.log(error.response.status);
-            if (error.response.status === 401) {
-                authService.logout();
-
-            }
+            if (error.response.status === 401) authService.logout();
         }
     }
 }

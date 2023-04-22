@@ -3,7 +3,6 @@ import { NavLink} from "react-router-dom";
 import ClientType from "../../Models/ClientType";
 import { authStore } from "../../Redux/AuthState";
 import "./Menu.css";
-import { FaShoppingBag } from "react-icons/fa";
 
 function Menu(): JSX.Element {
 
@@ -23,20 +22,13 @@ function Menu(): JSX.Element {
 
             {clientType === ClientType.CUSTOMER && <>
                 <NavLink to={"/customer/coupons"}>All Coupons</NavLink>
-               
-                
                 <NavLink to="/customer/purchase" > My Coupons </NavLink>
-                
-                {/* <FaShoppingBag/>  */}
                 <NavLink to={"/customer/details" }>Details</NavLink>
             </>}
-
             {clientType === ClientType.COMPANY && <>
                 <NavLink to={"/company/coupons" }>Coupons</NavLink>
                 <NavLink to={"/company/details" }>Details</NavLink>
-
             </>}
-
             {clientType === ClientType.ADMIN && <>
                 <NavLink to="/admin/companies">Companies</NavLink>
                 <NavLink to="/admin/customers">Customers</NavLink>

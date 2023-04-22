@@ -13,6 +13,5 @@ class CouponModel{
 		public category: Category
         
     ){}   
-
 }
 export default CouponModel;

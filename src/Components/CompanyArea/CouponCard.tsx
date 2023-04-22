@@ -14,14 +14,12 @@ function CouponCard(props: CouponCardProps ): JSX.Element {
     const params = useParams();
     const couponId = +params.prodId;
     const [coupon, setCoupon] = useState<CouponModel>();
-    // const navigate = useNavigate();
 
     async function deleteCoupon()  {
         if (window.confirm("Are you sure?")) {
         try {
             await companyService.deleteCoupon(props.coupon.id);
             notificationService.success("Company deleted");
-            //add popup
         }catch (error: any) {
             notificationService.error(error);
         }

@@ -4,14 +4,14 @@ import CouponModel from "../Models/CouponModel";
 // 1. Customers state - the data we need at global application level
 export class CouponState {
     public coupon: CouponModel[] = [];
-    public couponCustomer: CouponModel[] = [];
+    public couponPersonal: CouponModel[] = [];
 
 }
 
 // 2. Action Types - list of actions - enum
 export enum CouponActionType {
     FetchCoupon,
-    FetchCustomerCoupon,
+    FetchPersonalCoupon,
     AddCoupon,
     UpdateCoupon,
     DeleteCoupon, 
@@ -29,8 +29,8 @@ export interface CouponAction {
 export function fetchCouponAction(coupons: CouponModel[]): CouponAction {
     return { type: CouponActionType.FetchCoupon, payload: coupons };
 }
-export function fetchCustomerCouponAction(coupons: CouponModel[]): CouponAction {
-    return { type: CouponActionType.FetchCustomerCoupon, payload: coupons };
+export function fetchPersonalCouponAction(coupons: CouponModel[]): CouponAction {
+    return { type: CouponActionType.FetchPersonalCoupon, payload: coupons };
 }
 
 export function addCouponAction(coupons: CouponModel): CouponAction {
@@ -61,8 +61,8 @@ export function productReducer(currentState: CouponState = new CouponState(), ac
         case CouponActionType.FetchCoupon: // here payload is all Coupon
             newState.coupon = action.payload;
             break;
-        case CouponActionType.FetchCustomerCoupon: // here payload is all Coupon
-            newState.couponCustomer = action.payload;
+        case CouponActionType.FetchPersonalCoupon: // here payload is all Coupon
+            newState.couponPersonal = action.payload;
             break;
         case CouponActionType.AddCoupon: // here payload is a single product to add
             newState.coupon.push(action.payload);
@@ -81,7 +81,7 @@ export function productReducer(currentState: CouponState = new CouponState(), ac
             break;
         case CouponActionType.DeleteAll:
             newState.coupon = [];
-            newState.couponCustomer = [];
+            newState.couponPersonal = [];
             break;
     }
 
