@@ -9,8 +9,6 @@ function AddCompany(): JSX.Element {
     const { register, handleSubmit, formState } = useForm<CompanyUserModel>();
     const navigate = useNavigate();
 
-
-
     async function send(company: CompanyUserModel) {
         try {
             await adminService.addCompany(company);

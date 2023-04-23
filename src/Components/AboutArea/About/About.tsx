@@ -14,7 +14,7 @@ function About(): JSX.Element {
               and I have completed a Full Stack Developer course. 
               I worked on a coupon management system project, handling both backend and frontend development.
                My responsibilities included creating and managing the database, developing server logic, and implementing the client-side interface. 
-               I have experience with technologies such as JavaScript, React, and Node.js. 
+               I have experience with technologies such as JavaScript and React. 
                In the coupon management system project, I used these technologies to develop the backend part of the system using Java and Spring. 
                Additionally, I have experience working with MySQL databases, which were used in the project to store information about coupons and customers.
                </p> 
