@@ -1,3 +1,33 @@
 .About {
-	
+  /* flex: 0 0 50% ;  */
+  /* max-width: 50%; */
+  padding: 0 20px ; 
+}
+.About h1{
+    font-size: 45px;
+    margin-bottom: 20px;
+    text-align: center;
+
+}
+.About .me{
+    display: flex;
+    align-items: center;
+    width: 85%;
+    margin: auto;
+
+}
+.About .photo{
+    flex: 0 50%;
+    max-width: 30%;
+    height: auto;
+    /* width: 200px; */
+}
+.About p{
+    padding: 35px;
+    font-size: 18px;
+    line-height:1.5 ;
+    margin: 15px 0px;
+
+
+
 }

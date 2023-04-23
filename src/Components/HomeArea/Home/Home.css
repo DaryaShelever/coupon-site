@@ -1,0 +1,65 @@
+.Home{
+    color: #361005;
+ 
+}
+.Home .description{
+    font-size: 35px;
+    margin-bottom: 40px;
+    text-align: center;
+
+}
+.Home .main{
+    font-size: 17px;
+    width: auto;
+    box-shadow: 1px 1px 5px; 
+
+}
+.Home .roles{
+    /* width: 800px; */
+    display: flex;
+    flex-direction: column;
+    /* box-shadow: 1px 1px 5px;
+    margin: 10px;
+    border-radius: 5rem;     */
+    
+}
+.Home .levels{
+    margin-top: 15px ;
+    font-size: 17px;
+    text-align: center;
+    padding-bottom: 20px;
+}
+
+.Home .role{
+    display: flex;
+    text-align: center;
+    width: auto;
+    justify-content: center;
+}
+.Home .role .role-1{
+    margin: 5px;
+    margin-bottom: 40px;
+    border-radius: 50px; 
+    width: 300px;
+    padding: 20px ;
+    line-height: 20px;
+    position: relative;
+    display: inline-flex;
+    flex-direction: column;
+    background: #FD974F;
+
+}
+.Home .role .role-1 h3{
+    font-size: 17px;
+    text-transform: uppercase;
+    margin: 10px 0;
+
+}
+.Home .role .role-1 p{
+   font-size: 12px; 
+   margin-top: 10px ;
+
+}
+.Home .end{
+    box-shadow: 1px 1px 5px; 
+}
