@@ -29,16 +29,16 @@ export interface CouponAction {
 export function fetchCouponAction(coupons: CouponModel[]): CouponAction {
     return { type: CouponActionType.FetchCoupon, payload: coupons };
 }
-export function fetchPersonalCouponAction(coupons: CouponModel[]): CouponAction {
-    return { type: CouponActionType.FetchPersonalCoupon, payload: coupons };
+export function fetchPersonalCouponAction(couponPersonal: CouponModel[]): CouponAction {
+    return { type: CouponActionType.FetchPersonalCoupon, payload: couponPersonal };
 }
 
-export function addCouponAction(coupons: CouponModel): CouponAction {
-    return { type: CouponActionType.AddCoupon, payload: coupons };
+export function addCouponAction(coupon: CouponModel): CouponAction {
+    return { type: CouponActionType.AddCoupon, payload: coupon };
 }
 
-export function updateCouponAction(couponCustomer: CouponModel): CouponAction {
-    return { type: CouponActionType.UpdateCoupon, payload: couponCustomer };
+export function updateCouponAction(coupon: CouponModel): CouponAction {
+    return { type: CouponActionType.UpdateCoupon, payload: coupon };
 }
 
 export function deleteCouponAction(id: number): CouponAction {
@@ -68,8 +68,8 @@ export function productReducer(currentState: CouponState = new CouponState(), ac
             newState.coupon.push(action.payload);
             break;
         case CouponActionType.UpdateCoupon: // here payload is a single product to update
-            const indexToUpdate = newState.coupon.findIndex(p => p.id === action.payload.id);
-            if (indexToUpdate >= 0) newState.coupon[indexToUpdate] = action.payload;
+            const indexToUpdate = newState.couponPersonal.findIndex(p => p.id === action.payload.id);
+            if (indexToUpdate >= 0) newState.couponPersonal[indexToUpdate] = action.payload;
             break;
         case CouponActionType.DeleteCoupon: // here payload is an id of product to delete
             const indexToDelete = newState.coupon.findIndex(p => p.id === action.payload);

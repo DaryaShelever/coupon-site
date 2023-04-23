@@ -3,7 +3,7 @@ import { couponStore, fetchCouponAction } from '../../Redux/CouponState';
 import companyService from '../../Services/CompanyService';
 import notificationService from '../../Services/NotificationService';
 import CouponModel from '../../Models/CouponModel';
-import { useParams } from 'react-router-dom';
+import { NavLink, useParams } from 'react-router-dom';
 import CouponCard from './CouponCard';
 
 interface Props {
@@ -32,6 +32,8 @@ function FilteredCouponsByPrice(props: Props): JSX.Element  {
                 <CouponCard key={c.id} coupon={c} />
             ))
             : null} 
+                  <NavLink to="/company/coupons"><button> Back to Coupons </button></NavLink>
+
     </div>
   )
 }

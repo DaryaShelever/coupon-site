@@ -15,8 +15,8 @@ class CompanyService{
         couponStore.dispatch(addCouponAction(addedCoupon));
 
     }
-    public async updateCoupon(coupon: CouponModel): Promise<void> {
-        const response = await axios.put<CouponModel>(appConfig.companyUpdateCouponUrl, coupon,{//
+    public async updateCoupon(couponPersonal: CouponModel): Promise<void> {
+        const response = await axios.put<CouponModel>(appConfig.companyUpdateCouponUrl, couponPersonal,{//
             headers: {'Content-Type': 'application/json'}
         });
         const updatedCoupon = response.data;
@@ -29,7 +29,7 @@ class CompanyService{
     }
 
     public async getOneCoupon(id: number): Promise<CouponModel> {
-        return couponStore.getState().coupon.find(p => p.id === id);
+        return couponStore.getState().couponPersonal.find(p => p.id === id);
     }
 
     public async getAllCoupon(): Promise<CouponModel[]> {

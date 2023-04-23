@@ -29,7 +29,7 @@ function EditCompany(): JSX.Element {
     // Send updated company information to the server
     async function send(company: CompanyUserModel) {
         company.id = id;
-        // console.log(company);
+        //console.log(company);
         
         try {
             await adminService.updateCompany(company);
